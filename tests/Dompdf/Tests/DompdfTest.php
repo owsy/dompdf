@@ -86,6 +86,23 @@ class DompdfTest extends PHPUnit_Framework_TestCase
         $dompdf->render();
     }
 
+    public function testDivisionByZeroBug()
+    {
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml('<html>
+<body>
+ <table cellpadding="0" width="100%" style="border-collapse:collapse">
+   <tbody>
+     <tr>
+      <td></td>
+     </tr>
+   </tbody>
+ </table>
+</body>
+</html>');
+        $dompdf->render();
+    }
+
     public function testSpaceAtStartOfSecondInlineTag()
     {
         $text_frame_contents = array();

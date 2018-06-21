@@ -170,7 +170,8 @@ class Table extends AbstractFrameReflower
                 $increment = $width - $min_width;
 
                 foreach (array_keys($columns) as $i) {
-                    $cellmap->set_column_width($i, $columns[$i]["min-width"] + $increment * ($columns[$i]["max-width"] / $max_width));
+                    $width = $max_width === 0.0 ? 0.0 : ($columns[$i]["max-width"] / $max_width);
+                    $cellmap->set_column_width($i, $columns[$i]["min-width"] + $increment * $width);
                 }
                 return;
             }
