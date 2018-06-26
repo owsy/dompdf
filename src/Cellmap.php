@@ -26,16 +26,17 @@ class Cellmap
      * @var array
      */
     protected static $_BORDER_STYLE_SCORE = array(
-        "inset"  => 1,
-        "groove" => 2,
-        "outset" => 3,
-        "ridge"  => 4,
-        "dotted" => 5,
-        "dashed" => 6,
-        "solid"  => 7,
-        "double" => 8,
-        "hidden" => 9,
-        "none"   => 0,
+        "inset"   => 1,
+        "groove"  => 2,
+        "outset"  => 3,
+        "ridge"   => 4,
+        "dotted"  => 5,
+        "dashed"  => 6,
+        "solid"   => 7,
+        "double"  => 8,
+        "hidden"  => 9,
+        "initial" => 0,
+        "none"    => 0,
     );
 
     /**

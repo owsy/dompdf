@@ -103,6 +103,23 @@ class DompdfTest extends PHPUnit_Framework_TestCase
         $dompdf->render();
     }
 
+    public function testInitialIndexBug()
+    {
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml('<html>
+<body>
+  <table border="0" cellspacing="0">
+    <tbody>
+       <tr>
+          <td style="border-left-style:initial;"></td>
+       </tr>
+    </tbody>
+  </table>
+</body>
+</html>');
+        $dompdf->render();
+    }
+
     public function testSpaceAtStartOfSecondInlineTag()
     {
         $text_frame_contents = array();
